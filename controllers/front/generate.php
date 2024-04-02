@@ -11,15 +11,12 @@ class Lm_BoughtTogetherGenerateModuleFrontController extends ModuleFrontControll
       $products_relation = $this->generateProductAssociationList();
       $this->clearProductAssociationsTable();
       $this->storeProductAssociations($products_relation);
+      echo 'Generation Success';
       
-      echo "<pre>";
-      // var_dump($products_relation);
-      echo "</pre>";
     } else {
       echo 'Wrong token';
     }
     die();
-      // $this->setTemplate('module:ns_monmodule/views/templates/front/display.tpl');
   }
 
   public function generateProductAssociationList() {
@@ -105,25 +102,15 @@ class Lm_BoughtTogetherGenerateModuleFrontController extends ModuleFrontControll
 
   public function storeProductAssociations($associations) {
     foreach ($associations as $product_id => $data) {
-      // echo "Product ID: $product_id<br>";
       foreach($data['associated_reference_occurrences'] as $product_relation_id => $occurrences) {
         $this->storeAssociationInDatabase($product_id, $product_relation_id, $occurrences);
-        // echo "Reference: $occurrences <br>";
       }
-      // echo "-----------<br>";
-      // foreach ($product_id as $associated_products => $associated_product_id) {
-        // Stocker les associations dans la base de données
-        // echo $product_id . ":" . $associated_product_id . "<br>";
-        // $this->storeAssociationInDatabase($id_order, $product_id);
-      // }
     }
   }
 
   public function storeAssociationInDatabase($product_id, $product_relation_id, $occurrences) {
     // Insérer les données dans la table product_associations de la base de données
     $sql = "INSERT INTO `". _DB_PREFIX_ . "lm_product_bought_together` (`product_id`, `associated_product_id`, `occurrences`) VALUES ($product_id, $product_relation_id, $occurrences)";
-
-    // Db::getInstance()->execute("INSERT INTO `"._DB_PREFIX_."message` (`id_cart`, `id_employee`, `id_order`, `message`, `private`, `date_add`) VALUES (".intval($cart->id).", 0, 0, '".$_POST['text']."', 0, NOW())");
 
     Db::getInstance()->execute($sql);
   }
@@ -134,12 +121,3 @@ class Lm_BoughtTogetherGenerateModuleFrontController extends ModuleFrontControll
     Db::getInstance()->execute($sql);
   }
 }
-
-                // SELECT id_order, product_id
-            // FROM ps_order_detail
-            // WHERE id_order IN (
-            //     SELECT id_order
-            //     FROM ps_order_detail
-            //     GROUP BY id_order
-            //     HAVING COUNT(*) > 1
-            // );
