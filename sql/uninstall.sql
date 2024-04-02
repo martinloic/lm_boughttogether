@@ -1,0 +1,1 @@
+DROP TABLE PREFIXlm_product_bought_together;
