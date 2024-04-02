@@ -2,6 +2,7 @@
 
 /.htaccess
 *.log
+.DS_STORE
 
 # Cache
 /cache/*
