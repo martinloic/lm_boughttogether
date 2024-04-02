@@ -18,10 +18,8 @@ class LmProductBoughtTogether extends ObjectModel {
       }
       $associated_product_ids_str = implode(',', $associated_product_ids);
 
-      var_dump($associated_product_ids_str);
       $query_related_products = "SELECT * FROM " . _DB_PREFIX_ . "product WHERE id_product IN ($associated_product_ids_str) AND active = 1 ORDER BY FIELD(id_product,$associated_product_ids_str)";
       $related_products = Db::getInstance()->executeS($query_related_products);
-      // var_dump($related_products);
 
       $products_data = array();
       $id_lang = (int) Configuration::get('PS_LANG_DEFAULT');
@@ -52,7 +50,7 @@ class LmProductBoughtTogether extends ObjectModel {
             'image' => $image_url,
             'url_link' => $link_url,
             'discount' => round($discount, 1),
-            // Ajoutez d'autres données de produit ici...
+            // Add other data here...
           );
 
           $products_data[] = $product_data;
