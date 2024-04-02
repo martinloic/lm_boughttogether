@@ -1,6 +1,8 @@
 # LM Bought Together
 
-This module allows the website administrator to add an additional list of products on the product page. It retrieves from the database the products that have been most frequently purchased together.
+The module get all previous orders that contain more than  one product in your store's database, and display to your customers the most purchased products along with the current product viewing.
+
+When a customer visits a product page, they will be offered recommendations of the products that are most often bought together with the current product up to 4 products displayed.
 
 ## Installation
 
