@@ -45,3 +45,14 @@
   text-align: center;
   font-size: 16px;
 }
+
+#lm_boughttogether_block .price-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+#lm_boughttogether_block .price-container .product-price-with {
+  color: #ff1952;
+  font-weight: 700;
+}

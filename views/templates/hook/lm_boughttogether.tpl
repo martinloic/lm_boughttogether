@@ -8,7 +8,7 @@
       {foreach from=$lm_products item=lm_product}
         {* {var_dump($lm_product)} *}
         {* {var_dump($lm_product['name'])} *}
-        <article class="lm-related-product col-sm-3 col-md-4 col-lg-2 mb-1 mt-1" data-product-id="{$lm_product.id}">
+        <article class="lm-related-product col-sm-3 col-md-4 col-lg-2 mb-3 mt-3" data-product-id="{$lm_product.id}">
           <a href="{$lm_product.url_link}" title="Lien vers le produit : {$lm_product.name}"
             class="p-relative m-auto h-100">
             <div class="plus-container">
@@ -24,7 +24,7 @@
                       {* <span class="discount">-{$lm_product.discount}%</span> *}
                     </span>
                   {/if}
-                  <span class="price-overview"><b>{Tools::displayPrice($lm_product.price_tax)}
+                  <span class="price-overview"><b class="product-price-with">{Tools::displayPrice($lm_product.price_tax)}
                       {$product.labels.tax_long}</b></span>
                 {else}
                   {if $lm_product.discount != 0}
@@ -33,7 +33,7 @@
                       {* <span class="discount">-{$lm_product.discount}%</span> *}
                     </span>
                   {/if}
-                  <span class="price-overview"><b>{Tools::displayPrice($lm_product.price_tax_exc)}
+                  <span class="price-overview"><b class="product-price-with">{Tools::displayPrice($lm_product.price_tax_exc)}
                       {$product.labels.tax_long}</b></span>
                 {/if}
               </div>
