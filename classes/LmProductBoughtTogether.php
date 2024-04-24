@@ -18,7 +18,7 @@ class LmProductBoughtTogether extends ObjectModel {
       }
       $associated_product_ids_str = implode(',', $associated_product_ids);
 
-      $query_related_products = "SELECT * FROM " . _DB_PREFIX_ . "product WHERE id_product IN ($associated_product_ids_str) AND active = 1 ORDER BY FIELD(id_product,$associated_product_ids_str)";
+      $query_related_products = "SELECT * FROM " . _DB_PREFIX_ . "product WHERE id_product IN ($associated_product_ids_str) AND active = 1 AND visibility = 'both' ORDER BY FIELD(id_product,$associated_product_ids_str)";
       $related_products = Db::getInstance()->executeS($query_related_products);
 
       $products_data = array();
