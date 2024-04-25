@@ -1,4 +1,4 @@
-# LM Bought Together
+# Prestashop - LM Product Bought Together
 
 The module get all previous orders that contain more than  one product in your store's database, and display to your customers the most purchased products along with the current product viewing.
 
