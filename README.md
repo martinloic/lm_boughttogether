@@ -2,7 +2,7 @@
 
 The module get all previous orders that contain more than  one product in your store's database, and display to your customers the most purchased products along with the current product viewing.
 
-When a customer visits a product page, they will be offered recommendations of the products that are most often bought together with the current product up to 4 products displayed.
+When a customer visits a product page, they will be offered recommendations of the products that are most often bought together with the current product up to 5 products displayed.
 
 ## Installation
 
