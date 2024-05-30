@@ -1,6 +1,6 @@
 {if isset($lm_products) && is_array($lm_products) && $lm_products}
   <div id="lm_boughttogether_block"
-    class="tabs product-tabs product-sections col-lg-9 mb-3 col-md-12 col-sm-12 clear-left pt-3">
+    class="tabs product-tabs product-sections col-lg-9 mb-3 col-md-12 col-sm-12 clear pt-3">
     <h2>{l s='Product frequently bought with :' mod='lm_boughttogether'}</h2>
     {* {var_dump($lm_products)} *}
     <div class="content p-relative row">
